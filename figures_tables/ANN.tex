@@ -1,0 +1,28 @@
+\begin{tikzpicture}[neuron/.style={circle,inner sep=.5em,draw},
+    neuron missing/.style={
+    scale=1.25,
+    text height=0.333cm,
+    execute at begin node=$\vdots$,
+  }]
+ \begin{scope}[x=2cm,y=1.333cm]  
+ \foreach \X/\Y [count=\Z,remember=\Y as \LastY] in {Input/2,Hidden/3,Hidden/4,Output/2} 
+ {\foreach \YY in {1,...,\Y}
+ {\node[neuron] (n-\Z-\YY) at (\Z,-\YY+\Y/2+1/2) {};
+ \ifnum\YY=1
+  \node[above=1em of n-\Z-\YY,font=\sffamily] {\X\ layer};
+ \else
+  \path (n-\Z-\the\numexpr\YY-1) -- (n-\Z-\YY) 
+   node[midway,neuron missing] {};
+ \fi
+ \ifnum\Z>1
+  \foreach \YYY in {1,...,\LastY}
+  {\draw[-{Triangle},semithick] (n-\the\numexpr\Z-1\relax-\YYY) -- (n-\Z-\YY) ;}
+ \fi
+ }}
+ \end{scope} 
+ \path[nodes={inner sep=1pt}]
+    (n-2-2.-80) node[below right]{$a_i^\ell$} 
+    (n-3-3.-80) node[below right]{$a_j^{\ell+1}$}
+    (n-3-3.west) node[left=2pt]{$w_{ij}^{\ell}$}
+    (n-4-2.-90) node[below]{${y_k}$};
+\end{tikzpicture}

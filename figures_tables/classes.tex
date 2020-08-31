@@ -1,0 +1,40 @@
+\begin{table*}
+\centering
+    \begin{tabular}{c l c l c}
+    \hline
+    \hline
+        Class & Sample & Tasks & Selection & $N_{sample}$\\
+    \hline
+        \multirow{3}{*}{}0& Completely round smooth & T01 & $f_{smooth}\geq0.469$ & 8107\\
+        & & T07 & $f_{completely round}\geq0.5$ & \\
+        & & T06 & $f_{odd/no}\geq0.5$ & \\
+    \hline
+        \multirow{3}{*}{}1& In-between smooth & T01 & $f_{smooth}\geq0.469$ & 7782\\
+        & & T07 & $f_{in-between}\geq0.5$ & \\
+        & & T06 & $f_{odd/no}\geq0.5$ & \\
+    \hline
+        \multirow{3}{*}{}2& Cigar shaped smooth & T01 & $f_{smooth}\geq0.469$ & 578\\
+        & & T07 & $f_{cigar-shaped}\geq0.5$ & \\
+        & & T06 & $f_{odd/no}\geq0.5$ & \\
+    \hline
+        \multirow{3}{*}{}3& Lenticulars & T01 & $f_{features/disk}\geq0.430$ & 3780\\
+        & & T02 & $f_{edge-on/yes}\geq0.602$ & \\
+        & & T06 & $f_{odd/no}\geq0.5$ & \\
+    \hline
+        \multirow{4}{*}{}4& Barred spirals & T01 & $f_{feature/disk}\geq0.430$ & 827\\
+        & & T02 & $f_{edge-on/no}\geq0.715$ & \\
+        & & T03 & $f_{bar/yes}\geq0.715$ & \\
+        & & T04 & $f_{spiral/yes}\geq0.619$ & \\
+    \hline
+        \multirow{4}{*}{}5& Unbarred spirals & T01 & $f_{feature/disk}\geq0.430$ & 3307\\
+        & & T02 & $f_{edge-on/no}\geq0.715$ & \\
+        & & T03 & $f_{bar/no}\geq0.715$ & \\
+        & & T04 & $f_{spiral/yes}\geq0.619$ & \\
+    \hline
+        \multirow{6}{*}{}6& Irregular & T06 & $f_{odd/yes}\geq0.420$ & 1560\\
+        & & T08 & $f_{disturbed|irregular|other|merger|dustlane}\geq0.5$ & \\
+    \hline
+    \end{tabular}
+    \label{Classes}
+    \caption{Clean samples selected from GZ2 data. The thresholds from \citet{Willett_2013} are used for well-sampled images. The thresholds depend upon the number of votes for a classification task considered to be sufficient.}
+\end{table*}

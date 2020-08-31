@@ -1,0 +1,15 @@
+\begin{tikzpicture}[box/.style={draw,thick,minimum width=5em,minimum
+    height=1.2em},arj/.style={semithick,-latex}]
+  \begin{scope}[start chain=A going below,oc/.style={join=by arj,on chain},
+    font=\sffamily,node distance=1.75em]
+   \node[box,oc]{Layer 1};
+   \node[box,oc,label={north west:{$F(a_\ell)$}}]{Layer 2};
+   \node[circle,oc,draw,thick,node font=\bfseries\large,inner sep=1pt,
+    label={left:{$F(a_\ell)+a_\ell$}}]{+};
+   \node[oc]{$a_{\ell+1}$};
+  \end{scope}   
+  \draw[arj,latex-] (A-1.north) -- ++ (0,1.75em)
+      coordinate[midway,label=left:{$a_\ell$}](aux);
+  \draw[arj] (aux) -- ++ (2em,0) to[out=0,in=0,looseness=1.5]
+  node[midway,right]{$h(a_\ell)=a_\ell$}(A-3);    
+\end{tikzpicture}
